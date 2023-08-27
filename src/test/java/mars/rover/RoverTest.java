@@ -30,7 +30,7 @@ class RoverTest {
     @ParameterizedTest
     @MethodSource("validCoordinatesProvider")
     @DisplayName("Should successfully move and report final position")
-    void shouldSuccessfullyMove(String coordinates, String initialPosition, String expectedOutput) {
+    void shouldSuccessfullyMove(String instructions, String initialPosition, String expectedOutput) {
         String[] position = initialPosition.split(" ");
         int x = Integer.parseInt(position[0]);
         int y = Integer.parseInt(position[1]);
@@ -38,8 +38,8 @@ class RoverTest {
 
         Vehicle rover = new Rover(x, y, direction, new Plateau(5, 5));
 
-        for (String coordinate : coordinates.split("")) {
-            rover.move(Coordinates.valueOf(coordinate));
+        for (String coordinate : instructions.split("")) {
+            rover.move(Instructions.valueOf(coordinate));
         }
 
         Assertions.assertEquals(expectedOutput, rover.reportFinalPosition());
@@ -67,7 +67,7 @@ class RoverTest {
     @ParameterizedTest
     @MethodSource("invalidCoordinatesProvider")
     @DisplayName("Should not apply movements that go beyond the boundaries of the plateau")
-    void shouldNotApplyMovementsBeyondPlateauSurface(String coordinates, String initialPosition, String expectedOutput) {
+    void shouldNotApplyMovementsBeyondPlateauSurface(String instructions, String initialPosition, String expectedOutput) {
         String[] position = initialPosition.split(" ");
         int x = Integer.parseInt(position[0]);
         int y = Integer.parseInt(position[1]);
@@ -75,8 +75,8 @@ class RoverTest {
 
         Vehicle rover = new Rover(x, y, direction, new Plateau(5, 5));
 
-        for (String coordinate : coordinates.split("")) {
-            rover.move(Coordinates.valueOf(coordinate));
+        for (String coordinate : instructions.split("")) {
+            rover.move(Instructions.valueOf(coordinate));
         }
 
         Assertions.assertEquals(expectedOutput, rover.reportFinalPosition());

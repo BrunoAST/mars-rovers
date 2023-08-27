@@ -6,8 +6,8 @@ public class Rover extends Vehicle {
     }
 
     @Override
-    public void move(Coordinates coordinates) {
-        switch (coordinates) {
+    public void move(Instructions instructions) {
+        switch (instructions) {
             case L -> turnLeft();
             case R -> turnRight();
             case M -> moveForward();

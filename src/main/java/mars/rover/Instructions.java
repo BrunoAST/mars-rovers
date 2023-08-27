@@ -1,6 +1,6 @@
 package mars.rover;
 
-public enum Coordinates {
+public enum Instructions {
     L,
     R,
     M

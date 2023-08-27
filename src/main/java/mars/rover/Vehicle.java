@@ -17,7 +17,7 @@ public abstract class Vehicle {
         this.surface = surface;
     }
 
-    abstract void move(Coordinates coordinates);
+    abstract void move(Instructions instructions);
     abstract String reportFinalPosition();
 
     public int getX() {

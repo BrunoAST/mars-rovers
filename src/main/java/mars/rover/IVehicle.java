@@ -4,6 +4,6 @@ public interface IVehicle {
     int getX();
     int getY();
     Direction getDirection();
-    void move(Coordinates coordinates);
+    void move(Instructions instructions);
     String reportFinalPosition();
 }
