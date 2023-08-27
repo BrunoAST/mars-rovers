@@ -1,14 +1,8 @@
 package mars.rover;
 
-public class Rover implements IVehicle {
-    private int x;
-    private int y;
-    private Direction direction;
-
+public class Rover extends Vehicle {
     public Rover(int x, int y, Direction direction) {
-        this.x = x;
-        this.y = y;
-        this.direction = direction;
+        super(x, y, direction);
     }
 
     @Override
@@ -17,57 +11,38 @@ public class Rover implements IVehicle {
             case L -> turnLeft();
             case R -> turnRight();
             case M -> moveForward();
-            default -> throw new Error("Invalid coordinate provided");
         }
-    }
-
-    @Override
-    public int getX() {
-        return x;
-    }
-
-    @Override
-    public int getY() {
-        return y;
-    }
-
-    @Override
-    public Direction getDirection() {
-        return direction;
     }
 
     @Override
     public String reportFinalPosition() {
-        return x + " " + y + " " + direction.toString();
+        return getX() + " " + getY() + " " + getDirection().toString();
     }
 
     private void turnLeft() {
-        switch (direction) {
-            case N -> direction = Direction.W;
-            case S -> direction = Direction.E;
-            case E -> direction = Direction.N;
-            case W -> direction = Direction.S;
-            default -> throw new Error("Invalid direction provided");
+        switch (getDirection()) {
+            case N -> setDirection(Direction.W);
+            case S -> setDirection(Direction.E);
+            case E -> setDirection(Direction.N);
+            case W -> setDirection(Direction.S);
         }
     }
 
     private void turnRight() {
-        switch (direction) {
-            case N -> direction = Direction.E;
-            case S -> direction = Direction.W;
-            case E -> direction = Direction.S;
-            case W -> direction = Direction.N;
-            default -> throw new Error("Invalid direction provided");
+        switch (getDirection()) {
+            case N -> setDirection(Direction.E);
+            case S -> setDirection(Direction.W);
+            case E -> setDirection(Direction.S);
+            case W -> setDirection(Direction.N);
         }
     }
 
     private void moveForward() {
-        switch (direction) {
-            case N -> y++;
-            case S -> y--;
-            case E -> x++;
-            case W -> x--;
-            default -> throw new Error("Invalid direction provided");
+        switch (getDirection()) {
+            case N -> setY(getY() + 1);
+            case S -> setY(getY() - 1);
+            case E -> setX(getX() + 1);
+            case W -> setX(getX() - 1);
         }
     }
 }
