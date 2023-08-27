@@ -1,5 +1,8 @@
 package mars.rover;
 
+import mars.rover.Models.Direction;
+import mars.rover.Models.Instructions;
+
 public class Rover extends Vehicle {
     public Rover(int x, int y, Direction direction, ISurface surface) {
         super(x, y, direction, surface);

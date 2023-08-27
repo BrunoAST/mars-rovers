@@ -1,5 +1,8 @@
 package mars.rover;
 
+import mars.rover.Models.Direction;
+import mars.rover.Models.Instructions;
+
 public abstract class Vehicle {
     private int x;
     private int y;

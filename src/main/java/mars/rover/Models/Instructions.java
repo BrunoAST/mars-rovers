@@ -1,4 +1,4 @@
-package mars.rover;
+package mars.rover.Models;
 
 public enum Instructions {
     L,

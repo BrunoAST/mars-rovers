@@ -1,5 +1,7 @@
 package mars.rover;
 
+import mars.rover.Models.Direction;
+import mars.rover.Models.Instructions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,6 +1,6 @@
 package mars.rover.Normalizer;
 
-import mars.rover.Direction;
+import mars.rover.Models.Direction;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
