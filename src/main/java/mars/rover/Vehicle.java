@@ -1,5 +1,6 @@
 package mars.rover;
 
+import mars.rover.CustomErrors.OutsideBoundariesError;
 import mars.rover.Models.Direction;
 import mars.rover.Models.Instructions;
 

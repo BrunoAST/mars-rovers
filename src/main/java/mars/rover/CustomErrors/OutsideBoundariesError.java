@@ -1,4 +1,6 @@
-package mars.rover;
+package mars.rover.CustomErrors;
+
+import mars.rover.ISurface;
 
 public class OutsideBoundariesError extends Error {
     public OutsideBoundariesError(ISurface surface) {
