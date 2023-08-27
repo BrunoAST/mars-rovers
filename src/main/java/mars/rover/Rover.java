@@ -1,8 +1,8 @@
 package mars.rover;
 
 public class Rover extends Vehicle {
-    public Rover(int x, int y, Direction direction) {
-        super(x, y, direction);
+    public Rover(int x, int y, Direction direction, ISurface surface) {
+        super(x, y, direction, surface);
     }
 
     @Override
@@ -38,11 +38,33 @@ public class Rover extends Vehicle {
     }
 
     private void moveForward() {
+        int position;
+
         switch (getDirection()) {
-            case N -> setY(getY() + 1);
-            case S -> setY(getY() - 1);
-            case E -> setX(getX() + 1);
-            case W -> setX(getX() - 1);
+            case N -> {
+                position = getY() + 1;
+                if (position <= getSurface().height()) {
+                    setY(position);
+                }
+            }
+            case S -> {
+                position = getY() - 1;
+                if (position >= 0) {
+                    setY(position);
+                }
+            }
+            case E -> {
+                position = getX() + 1;
+                if (position <= getSurface().height()) {
+                    setX(position);
+                }
+            }
+            case W -> {
+                position = getX() - 1;
+                if (position >= 0) {
+                    setX(position);
+                }
+            }
         }
     }
 }
