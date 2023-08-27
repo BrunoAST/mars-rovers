@@ -56,9 +56,7 @@ class NormalizeTest {
         lines.add("1 2 N");
         lines.add("LMLMLMLMM");
 
-        Error error = assertThrows(Error.class, () -> {
-            Normalize.normalizeData(lines);
-        });
+        Error error = assertThrows(Error.class, () -> Normalize.normalizeData(lines));
 
         assertEquals("Invalid surface: " + surface, error.getMessage());
     }
@@ -72,9 +70,7 @@ class NormalizeTest {
         lines.add(initialPosition);
         lines.add("LMLMLMLMM");
 
-        Error error = assertThrows(Error.class, () -> {
-            Normalize.normalizeData(lines);
-        });
+        Error error = assertThrows(Error.class, () -> Normalize.normalizeData(lines));
 
         assertEquals("Invalid initial position: " + initialPosition, error.getMessage());
     }
@@ -88,9 +84,7 @@ class NormalizeTest {
         lines.add("1 2 N");
         lines.add(instruction);
 
-        Error error = assertThrows(Error.class, () -> {
-            Normalize.normalizeData(lines);
-        });
+        Error error = assertThrows(Error.class, () -> Normalize.normalizeData(lines));
 
         assertEquals("Invalid instructions: " + instruction, error.getMessage());
     }

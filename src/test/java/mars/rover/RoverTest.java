@@ -56,9 +56,7 @@ class RoverTest {
         int y = Integer.parseInt(position[1]);
         Direction direction = Direction.valueOf(position[2]);
 
-        Error error = assertThrows(Error.class, () -> {
-            new Rover(x, y, direction, new Plateau(5, 5));
-        });
+        Error error = assertThrows(Error.class, () -> new Rover(x, y, direction, new Plateau(5, 5)));
 
         Assertions.assertEquals(
                 "Landing position outside of the surface's boundaries width: 5 height: 5",

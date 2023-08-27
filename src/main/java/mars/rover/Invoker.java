@@ -6,8 +6,8 @@ import mars.rover.Normalizer.RoverInformation;
 import java.util.ArrayList;
 
 public class Invoker {
-    private ArrayList<Rover> rovers = new ArrayList<>();
-    private ArrayList<String[]> instructions = new ArrayList<>();
+    private final ArrayList<Rover> rovers = new ArrayList<>();
+    private final ArrayList<String[]> instructions = new ArrayList<>();
 
     public void addRover(RoverInformation roverInformation, ISurface surface) {
         var initialPosition = roverInformation.initialPosition();
