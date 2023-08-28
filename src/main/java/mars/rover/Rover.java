@@ -1,5 +1,7 @@
 package mars.rover;
 
+import mars.rover.Contracts.ISurface;
+import mars.rover.Contracts.IVehicle;
 import mars.rover.CustomErrors.OutsideBoundariesError;
 import mars.rover.Models.Direction;
 import mars.rover.Models.Instruction;

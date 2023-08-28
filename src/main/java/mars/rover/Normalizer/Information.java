@@ -1,6 +1,6 @@
 package mars.rover.Normalizer;
 
-import mars.rover.ISurface;
+import mars.rover.Contracts.ISurface;
 
 import java.util.ArrayList;
 

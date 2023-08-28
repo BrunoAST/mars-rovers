@@ -1,5 +1,6 @@
 package mars.rover;
 
+import mars.rover.Contracts.IVehicle;
 import mars.rover.Models.Direction;
 import mars.rover.Models.Instruction;
 import mars.rover.Models.Plateau;

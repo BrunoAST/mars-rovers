@@ -1,5 +1,7 @@
 package mars.rover;
 
+import mars.rover.Contracts.ISurface;
+import mars.rover.Contracts.IVehicle;
 import mars.rover.Models.ControllerQueue;
 import mars.rover.Models.Instruction;
 import mars.rover.Normalizer.RoverInformation;

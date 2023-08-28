@@ -1,6 +1,6 @@
 package mars.rover.Models;
 
-import mars.rover.IVehicle;
+import mars.rover.Contracts.IVehicle;
 
 import java.util.ArrayList;
 

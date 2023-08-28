@@ -1,4 +1,4 @@
-package mars.rover;
+package mars.rover.Contracts;
 
 public interface ISurface {
    int width();

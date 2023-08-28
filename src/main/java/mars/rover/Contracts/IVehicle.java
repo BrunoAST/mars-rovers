@@ -1,4 +1,4 @@
-package mars.rover;
+package mars.rover.Contracts;
 
 import mars.rover.Models.Direction;
 import mars.rover.Models.Instruction;
