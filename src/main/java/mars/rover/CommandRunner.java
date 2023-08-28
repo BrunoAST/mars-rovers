@@ -4,14 +4,18 @@ import mars.rover.Normalizer.Information;
 
 public class CommandRunner {
     public static void execute(Information data) {
-        var invoker = new Invoker();
+        var roverController = new RoverController();
 
         for (var i = 0; i < data.getRoverInformationList().size(); i++) {
-            invoker.addRover(data.getRoverInformationList().get(i), data.getSurface());
-            invoker.sendInstructions(data.getRoverInformationList().get(i).instructions());
-            invoker.move(i);
+            roverController.addRover(
+                    data.getRoverInformationList().get(i),
+                    data.getRoverInformationList().get(i).getInstructions(),
+                    data.getSurface()
+            );
         }
 
-        System.out.println(invoker.reportLocation());
+        roverController.move();
+
+        System.out.print(roverController.reportLocation());
     }
 }

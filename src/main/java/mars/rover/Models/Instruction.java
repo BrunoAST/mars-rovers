@@ -1,6 +1,6 @@
 package mars.rover.Models;
 
-public enum Instructions {
+public enum Instruction {
     L,
     R,
     M

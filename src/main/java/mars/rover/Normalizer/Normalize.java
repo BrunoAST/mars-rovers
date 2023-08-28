@@ -5,7 +5,7 @@ import mars.rover.CustomErrors.InvalidInstructionsError;
 import mars.rover.CustomErrors.InvalidSurfaceError;
 import mars.rover.Models.Direction;
 import mars.rover.ISurface;
-import mars.rover.Plateau;
+import mars.rover.Models.Plateau;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;

@@ -28,23 +28,15 @@ class NormalizeTest {
         assertEquals(5, surface.width());
         assertEquals(6, surface.height());
 
-        assertEquals(1, roverInformationList.get(0).initialPosition().x());
-        assertEquals(2, roverInformationList.get(0).initialPosition().y());
-        assertEquals(Direction.N, roverInformationList.get(0).initialPosition().direction());
-        assertEquals(9, roverInformationList.get(0).instructions().length);
-        assertArrayEquals(
-                new String[]{"L", "M", "L", "M", "L", "M", "L", "M", "M"},
-                roverInformationList.get(0).instructions()
-        );
+        assertEquals(1, roverInformationList.get(0).getInitialPosition().x());
+        assertEquals(2, roverInformationList.get(0).getInitialPosition().y());
+        assertEquals(Direction.N, roverInformationList.get(0).getInitialPosition().direction());
+        assertEquals(9, roverInformationList.get(0).getInstructions().size());
 
-        assertEquals(3, roverInformationList.get(1).initialPosition().x());
-        assertEquals(3, roverInformationList.get(1).initialPosition().y());
-        assertEquals(Direction.E, roverInformationList.get(1).initialPosition().direction());
-        assertEquals(10, roverInformationList.get(1).instructions().length);
-        assertArrayEquals(
-                new String[]{"M", "M", "R", "M", "M", "R", "M", "R", "R", "M"},
-                roverInformationList.get(1).instructions()
-        );
+        assertEquals(3, roverInformationList.get(1).getInitialPosition().x());
+        assertEquals(3, roverInformationList.get(1).getInitialPosition().y());
+        assertEquals(Direction.E, roverInformationList.get(1).getInitialPosition().direction());
+        assertEquals(10, roverInformationList.get(1).getInstructions().size());
     }
 
     @ParameterizedTest

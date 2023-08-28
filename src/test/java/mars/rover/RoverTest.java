@@ -1,7 +1,8 @@
 package mars.rover;
 
 import mars.rover.Models.Direction;
-import mars.rover.Models.Instructions;
+import mars.rover.Models.Instruction;
+import mars.rover.Models.Plateau;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -38,10 +39,10 @@ class RoverTest {
         int y = Integer.parseInt(position[1]);
         Direction direction = Direction.valueOf(position[2]);
 
-        Vehicle rover = new Rover(x, y, direction, new Plateau(5, 5));
+        IVehicle rover = new Rover(x, y, direction, new Plateau(5, 5));
 
         for (String coordinate : instructions.split("")) {
-            rover.move(Instructions.valueOf(coordinate));
+            rover.move(Instruction.valueOf(coordinate));
         }
 
         Assertions.assertEquals(expectedOutput, rover.reportFinalPosition());
@@ -73,10 +74,10 @@ class RoverTest {
         int y = Integer.parseInt(position[1]);
         Direction direction = Direction.valueOf(position[2]);
 
-        Vehicle rover = new Rover(x, y, direction, new Plateau(5, 5));
+        IVehicle rover = new Rover(x, y, direction, new Plateau(5, 5));
 
         for (String coordinate : instructions.split("")) {
-            rover.move(Instructions.valueOf(coordinate));
+            rover.move(Instruction.valueOf(coordinate));
         }
 
         Assertions.assertEquals(expectedOutput, rover.reportFinalPosition());

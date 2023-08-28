@@ -1,16 +1,64 @@
 package mars.rover;
 
+import mars.rover.CustomErrors.OutsideBoundariesError;
 import mars.rover.Models.Direction;
-import mars.rover.Models.Instructions;
+import mars.rover.Models.Instruction;
 
-public class Rover extends Vehicle {
+public class Rover implements IVehicle {
+    private int x;
+    private int y;
+    private Direction direction;
+    private final ISurface surface;
+
     public Rover(int x, int y, Direction direction, ISurface surface) {
-        super(x, y, direction, surface);
+        if (x < 0 || y < 0 || x > surface.width() || y > surface.height()) {
+            throw new OutsideBoundariesError(surface);
+        }
+
+        this.x = x;
+        this.y = y;
+        this.direction = direction;
+        this.surface = surface;
     }
 
     @Override
-    public void move(Instructions instructions) {
-        switch (instructions) {
+    public int getX() {
+        return x;
+    }
+
+    @Override
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    @Override
+    public int getY() {
+        return y;
+    }
+
+    @Override
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    @Override
+    public Direction getDirection() {
+        return direction;
+    }
+
+    @Override
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
+
+    @Override
+    public ISurface getSurface() {
+        return surface;
+    }
+
+    @Override
+    public void move(Instruction instruction) {
+        switch (instruction) {
             case L -> turnLeft();
             case R -> turnRight();
             case M -> moveForward();
